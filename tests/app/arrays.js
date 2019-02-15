@@ -34,6 +34,7 @@ describe('arrays', () => {
     expect(result.join(' ')).to.eql('1 3 4');
 
     // make sure that you return the same array instance
+    // Well I think that something is not good here
     expect(result).equal(a);
   });
 
