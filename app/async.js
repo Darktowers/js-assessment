@@ -22,15 +22,15 @@ asyncAnswers = {
    */
   manipulateRemoteData: async function manipulateRemoteData(url) {
     let promise = await new Promise((resolve, reject) => {
-      let xhr = new XMLHttpRequest();
-      xhr.open("GET", url, true);
+      let xhr = new XMLHttpRequest()
+      xhr.open("GET", url, true)
       xhr.onload = (e) => {
-        resolve(xhr.response);
-      };
+        resolve(xhr.response)
+      }
       xhr.onerror = (e) => {
-        reject(e);
-      };
-      xhr.send();
+        reject(e)
+      }
+      xhr.send()
     })
     let people = JSON.parse(promise).people
 

@@ -61,7 +61,7 @@ recursionAnswers = {
    * @returns {Number} The nth fibonacci number
    */
   fibonacci: function fibonacci(n) {
-    let fibo = (n) => n < 2 ? n : fibo(n - 1) + fibo(n - 2);
+    let fibo = (n) => n < 2 ? n : fibo(n - 1) + fibo(n - 2)
     return fibo(n)
   },
-};
+}
