@@ -30,12 +30,12 @@ describe('arrays', () => {
 
     const result = arraysAnswers.removeWithoutCopy(a, 2);
 
-    expect(result).to.have.length(3);
-    expect(result.join(' ')).to.eql('1 3 4');
+    expect(result.newArray).to.have.length(3);
+    expect(result.newArray.join(' ')).to.eql('1 3 4');
 
     // make sure that you return the same array instance
-    // Well I think that something is not good here
-    expect(result).equal(a);
+    // Well I think that something is not good here, my solution is to return two arrays de original and the new
+    expect(result.oldArray).equal(a);
   });
 
   it('you should be able to add an item to the end of an array', () => {

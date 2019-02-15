@@ -21,25 +21,21 @@ asyncAnswers = {
    * @returns {then: function} A promise like object containing a then property.
    */
   manipulateRemoteData: async function manipulateRemoteData(url) {
-    let promise = await new Promise(resolve => {
+    let promise = await new Promise((resolve, reject) => {
       let xhr = new XMLHttpRequest();
       xhr.open("GET", url, true);
       xhr.onload = (e) => {
         resolve(xhr.response);
       };
       xhr.onerror = (e) => {
-        resolve(e);
+        reject(e);
       };
       xhr.send();
     })
     let people = JSON.parse(promise).people
 
     return people.sort((a, b) => {
-      if (a.name < b.name)
-        return -1;
-      if (a.name > b.name)
-        return 1;
-      return 0;
+      return a.name < b.name ? -1 : a.name > b.name ? 1 : 0
     }).map(user => user.name)
   },
 

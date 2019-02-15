@@ -9,7 +9,7 @@ logicalOperatorsAnswers = {
    * @returns {bool} True if either a, b, or both are true, false otherwise.
    */
   or: function or(a, b) {
-
+    return a != b || (a == true || b == true) ? true : false
   },
 
   /**
@@ -22,6 +22,6 @@ logicalOperatorsAnswers = {
    * @returns {bool} True if either a and b are both true, false otherwise.
    */
   and: function and(a, b) {
-
+    return (!isNaN(parseFloat(a)) && isFinite(a)) && (!isNaN(parseFloat(b)) && isFinite(b) ) ? true :  a == true && b == true ? true : false
   }
 };

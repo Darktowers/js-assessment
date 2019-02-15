@@ -34,7 +34,7 @@ arraysAnswers = {
 
 
   removeWithoutCopy: function removeWithoutCopy(arr, item) {
-    return arr.filter(elem => elem != item)
+    return {newArray: arr.filter(elem => elem != item), oldArray: arr}
   },
   /**
    * Adds a number, item, to the end of an array, arr.
